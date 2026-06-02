@@ -3,6 +3,8 @@ const WHATSAPP_NUMBER = "19296429620";
 const bookingForm = document.querySelector("#bookingForm");
 const formNote = document.querySelector("#formNote");
 const langButtons = document.querySelectorAll("[data-lang]");
+const floatingWhatsApp = document.querySelector(".float-whatsapp");
+const hero = document.querySelector(".hero");
 
 const translations = {
   es: {
@@ -333,4 +335,22 @@ langButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
+function updateFloatingWhatsApp() {
+  if (!floatingWhatsApp || !hero) {
+    return;
+  }
+
+  if (!window.matchMedia("(max-width: 640px)").matches) {
+    floatingWhatsApp.classList.add("is-visible");
+    return;
+  }
+
+  const heroBottom = hero.getBoundingClientRect().bottom;
+  floatingWhatsApp.classList.toggle("is-visible", heroBottom < window.innerHeight - 70);
+}
+
+window.addEventListener("scroll", updateFloatingWhatsApp, { passive: true });
+window.addEventListener("resize", updateFloatingWhatsApp);
+
 setLanguage(localStorage.getItem("lucianoWashLang") || "es");
+updateFloatingWhatsApp();
