@@ -142,7 +142,7 @@ img {
   min-height: min(760px, calc(100vh - 72px));
   display: grid;
   align-items: center;
-  padding: clamp(72px, 12vw, 140px) clamp(18px, 5vw, 64px) 96px;
+  padding: clamp(82px, 11vw, 132px) clamp(18px, 5vw, 64px) 104px;
   overflow: hidden;
 }
 
@@ -168,7 +168,7 @@ img {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 670px;
+  max-width: 720px;
 }
 
 .hero-logo,
@@ -177,7 +177,7 @@ img {
 }
 
 .hero-logo {
-  margin-bottom: 22px;
+  margin-bottom: clamp(24px, 4vw, 42px);
   object-fit: contain;
   background: transparent;
   border: 0;
@@ -187,8 +187,8 @@ img {
 }
 
 .hero-logo.original-logo {
-  width: clamp(260px, 33vw, 430px);
-  max-height: min(44vh, 430px);
+  width: clamp(220px, 27vw, 350px);
+  max-height: min(36vh, 350px);
 }
 
 .eyebrow {
@@ -208,9 +208,9 @@ p {
 }
 
 h1 {
-  margin-bottom: 18px;
-  font-size: clamp(3rem, 10vw, 6.8rem);
-  line-height: 0.96;
+  margin-bottom: 20px;
+  font-size: clamp(3.1rem, 8vw, 6.2rem);
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -227,7 +227,7 @@ h3 {
 }
 
 .hero-copy {
-  max-width: 550px;
+  max-width: 600px;
   color: #d7e2e8;
   font-size: clamp(1.05rem, 2vw, 1.34rem);
 }
@@ -236,7 +236,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 34px;
 }
 
 .button.primary {
@@ -282,6 +282,26 @@ h3 {
 .quick-panel > span > span {
   display: block;
   margin-top: 3px;
+}
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding: 0 clamp(18px, 5vw, 64px);
+  background: #061520;
+  border-top: 1px solid rgba(0, 200, 255, 0.25);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.25);
+}
+
+.proof-strip span {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-weight: 900;
 }
 
 .section,
@@ -341,12 +361,13 @@ h3 {
 }
 
 .service-card {
-  min-height: 260px;
-  padding: 24px;
+  min-height: 360px;
+  padding: 0 22px 22px;
   border: 1px solid #cfe4ee;
   background: #ffffff;
   color: #092130;
   box-shadow: 0 12px 28px rgba(9, 47, 70, 0.08);
+  overflow: hidden;
 }
 
 .service-card.featured {
@@ -367,10 +388,58 @@ h3 {
   place-items: center;
   width: 68px;
   height: 68px;
-  margin-bottom: 28px;
+  margin: -34px 0 20px;
   background: linear-gradient(135deg, #e7f8ff, #bceeff);
   color: #074b75;
   border: 1px solid rgba(36, 184, 255, 0.55);
+}
+
+.service-media {
+  height: 168px;
+  margin: 0 -22px 0;
+  background: #dbeef7;
+  overflow: hidden;
+}
+
+.service-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.packages {
+  background: #eef8fc;
+  color: #092130;
+}
+
+.packages .section-head p:last-child {
+  color: #58707d;
+  max-width: 760px;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.package-grid article {
+  min-height: 180px;
+  padding: 22px;
+  border: 1px solid #cfe4ee;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(9, 47, 70, 0.08);
+}
+
+.package-grid strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #0f4362;
+  font-size: 1.12rem;
+}
+
+.package-grid p {
+  color: #58707d;
 }
 
 .icon svg {
@@ -469,7 +538,7 @@ h3 {
 }
 
 .social-card {
-  min-height: 560px;
+  min-height: 450px;
   padding: 18px;
   border: 1px solid rgba(0, 200, 255, 0.22);
   background: rgba(255, 255, 255, 0.08);
@@ -505,12 +574,12 @@ h3 {
 .tiktok-card .tiktok-embed {
   width: 100% !important;
   max-width: none !important;
-  min-height: 500px;
+  min-height: 390px;
   background: #ffffff;
 }
 
 .facebook-fallback {
-  min-height: 500px;
+  min-height: 390px;
   display: grid;
   align-content: center;
   justify-items: center;
@@ -868,6 +937,7 @@ button {
   .booking,
   .contact-band,
   .comparison-grid,
+  .package-grid,
   .service-grid,
   .social-grid {
     grid-template-columns: 1fr;
@@ -883,6 +953,10 @@ button {
 
   .service-card {
     min-height: auto;
+  }
+
+  .proof-strip {
+    grid-template-columns: 1fr;
   }
 
   .gallery {
@@ -918,7 +992,7 @@ button {
   }
 
   .hero-logo.original-logo {
-    width: min(82vw, 315px);
+    width: min(72vw, 250px);
     max-height: none;
   }
 
@@ -943,6 +1017,8 @@ button {
   .quick-panel,
   .contact-grid,
   .detail-list,
+  .package-grid,
+  .proof-strip,
   .reason-grid,
   .booking-form,
   .gallery,
@@ -1011,8 +1087,8 @@ button {
   }
 
   .tiktok-card .tiktok-embed,
-  .facebook-card iframe {
-    min-height: 420px;
+  .facebook-fallback {
+    min-height: 360px;
   }
 
   .footer {
