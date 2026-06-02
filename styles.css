@@ -86,6 +86,36 @@ img {
   font-size: 0.94rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid rgba(36, 184, 255, 0.32);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lang-option {
+  min-width: 38px;
+  min-height: 34px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 1000;
+}
+
+.lang-option.is-active {
+  background: var(--blue);
+  color: #041927;
+}
+
 .nav a:hover,
 .footer a:hover {
   color: var(--blue);
@@ -686,6 +716,10 @@ button {
   .brand small,
   .nav-action {
     display: none;
+  }
+
+  .header-actions {
+    margin-left: auto;
   }
 
   .brand-logo {

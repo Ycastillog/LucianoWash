@@ -8,7 +8,7 @@
     <title>Luciano Wash | Limpieza profesional</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=16">
+    <link rel="stylesheet" href="styles.css?v=17">
   </head>
   <body>
     <header class="topbar">
@@ -16,15 +16,21 @@
         <img class="brand-logo" src="assets/brand-mark.svg?v=4" alt="">
         <span>
           <strong>Luciano Wash</strong>
-          <small>Limpieza profesional</small>
+          <small data-i18n="brand_subtitle">Limpieza profesional</small>
         </span>
       </a>
       <nav class="nav" aria-label="Principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#cita">Cita</a>
+        <a href="#servicios" data-i18n="nav_services">Servicios</a>
+        <a href="#trabajos" data-i18n="nav_work">Trabajos</a>
+        <a href="#cita" data-i18n="nav_booking">Cita</a>
       </nav>
-      <a class="nav-action" href="tel:+19296429620">Reservar</a>
+      <div class="header-actions">
+        <div class="language-toggle" aria-label="Selector de idioma">
+          <button type="button" class="lang-option is-active" data-lang="es">ES</button>
+          <button type="button" class="lang-option" data-lang="en">EN</button>
+        </div>
+        <a class="nav-action" href="tel:+19296429620" data-i18n="nav_reserve">Reservar</a>
+      </div>
     </header>
 
     <main>
@@ -36,186 +42,186 @@
             <source media="(max-width: 640px)" srcset="assets/brand-mobile.svg?v=1">
             <img class="hero-logo" src="assets/brand-complete.svg?v=7" alt="Luciano Wash Limpieza Profesional">
           </picture>
-          <p class="eyebrow">Servicios profesionales de limpieza</p>
-          <h1>Limpieza que se nota</h1>
-          <p class="hero-copy">Resultados visibles para autos, muebles, hogares, negocios, piscinas y exteriores. Limpieza cercana, clara y profesional.</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Servicios profesionales de limpieza</p>
+          <h1 data-i18n="hero_title">Limpieza que se nota</h1>
+          <p class="hero-copy" data-i18n="hero_copy">Resultados visibles para autos, muebles, hogares, negocios, piscinas y exteriores. Limpieza cercana, clara y profesional.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#cita">Cotizar servicio</a>
+            <a class="button primary" href="#cita" data-i18n="hero_cta">Cotizar servicio</a>
             <a class="button ghost" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20cotizar%20un%20servicio%20de%20limpieza." target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
         </div>
         <div class="quick-panel" aria-label="Resumen">
-          <span><strong>Autos</strong> Detailing, motor, pintura y PPF</span>
-          <span><strong>Hogar</strong> muebles, colchones, alfombras y ventanas</span>
-          <span><strong>Espacios</strong> negocios, piscinas y pressure washing</span>
+          <span><strong data-i18n="quick_1_title">Autos</strong> <span data-i18n="quick_1_body">Detailing, motor, pintura y PPF</span></span>
+          <span><strong data-i18n="quick_2_title">Hogar</strong> <span data-i18n="quick_2_body">muebles, colchones, alfombras y ventanas</span></span>
+          <span><strong data-i18n="quick_3_title">Espacios</strong> <span data-i18n="quick_3_body">negocios, piscinas y pressure washing</span></span>
         </div>
       </section>
 
       <section class="section intro">
         <div>
-          <p class="eyebrow">Autos | Hogares | Negocios | Piscinas</p>
-          <h2>Del carro a toda tu propiedad.</h2>
+          <p class="eyebrow" data-i18n="intro_eyebrow">Autos | Hogares | Negocios | Piscinas</p>
+          <h2 data-i18n="intro_title">Del carro a toda tu propiedad.</h2>
         </div>
-        <p>Luciano Wash ahora se presenta como una empresa de limpieza integral: una sola marca para cuidar autos, muebles, alfombras, piscinas, hogares, negocios y exteriores.</p>
+        <p data-i18n="intro_copy">Luciano Wash ahora se presenta como una empresa de limpieza integral: una sola marca para cuidar autos, muebles, alfombras, piscinas, hogares, negocios y exteriores.</p>
       </section>
 
       <section class="section" id="servicios">
         <div class="section-head">
-          <p class="eyebrow">Servicios profesionales</p>
-          <h2>Todo lo que necesitas limpiar, en un solo lugar.</h2>
+          <p class="eyebrow" data-i18n="services_eyebrow">Servicios profesionales</p>
+          <h2 data-i18n="services_title">Todo lo que necesitas limpiar, en un solo lugar.</h2>
         </div>
         <div class="service-grid">
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#car"></use></svg></span>
-            <h3>Detailing de autos</h3>
-            <p>Interior/exterior, motor, descontaminacion, correccion de pintura, ceramico y PPF.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_1_title">Detailing de autos</h3>
+            <p data-i18n="service_1_copy">Interior/exterior, motor, descontaminacion, correccion de pintura, ceramico y PPF.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#truck"></use></svg></span>
-            <h3>Lavado de camiones</h3>
-            <p>Limpieza para unidades grandes, flotas y vehiculos de trabajo.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_2_title">Lavado de camiones</h3>
+            <p data-i18n="service_2_copy">Limpieza para unidades grandes, flotas y vehiculos de trabajo.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card featured">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#sofa"></use></svg></span>
-            <h3>Muebles, sillones y colchones</h3>
-            <p>Limpieza profunda para sofas, tapiceria, sillones, colchones y piezas de alto uso.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_3_title">Muebles, sillones y colchones</h3>
+            <p data-i18n="service_3_copy">Limpieza profunda para sofas, tapiceria, sillones, colchones y piezas de alto uso.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#rug"></use></svg></span>
-            <h3>Alfombras</h3>
-            <p>Restauracion visual, extraccion de suciedad y mantenimiento programado.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_4_title">Alfombras</h3>
+            <p data-i18n="service_4_copy">Restauracion visual, extraccion de suciedad y mantenimiento programado.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#restore"></use></svg></span>
-            <h3>Restauracion automotriz</h3>
-            <p>Plasticos, focos, insignias, descontaminacion quimica/manual y correccion de pintura.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_5_title">Restauracion automotriz</h3>
+            <p data-i18n="service_5_copy">Plasticos, focos, insignias, descontaminacion quimica/manual y correccion de pintura.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card featured">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#pool"></use></svg></span>
-            <h3>Piscinas</h3>
-            <p>Limpieza y mantenimiento para agua clara, bordes limpios y espacios listos.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_6_title">Piscinas</h3>
+            <p data-i18n="service_6_copy">Limpieza y mantenimiento para agua clara, bordes limpios y espacios listos.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#home"></use></svg></span>
-            <h3>Limpieza residencial</h3>
-            <p>Hogares, apartamentos, Airbnb, ventanas, cocinas y limpiezas profundas.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_7_title">Limpieza residencial</h3>
+            <p data-i18n="service_7_copy">Hogares, apartamentos, Airbnb, ventanas, cocinas y limpiezas profundas.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#business"></use></svg></span>
-            <h3>Limpieza comercial</h3>
-            <p>Oficinas, locales, negocios, mantenimiento programado y espacios de alto transito.</p>
-            <strong>Cotizar</strong>
+            <h3 data-i18n="service_8_title">Limpieza comercial</h3>
+            <p data-i18n="service_8_copy">Oficinas, locales, negocios, mantenimiento programado y espacios de alto transito.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
           <article class="service-card">
             <span class="icon"><svg aria-hidden="true"><use href="assets/service-icons.svg#pressure"></use></svg></span>
             <h3>Pressure Washing</h3>
-            <p>Lavado a presion para aceras, marquesinas, fachadas y areas exteriores.</p>
-            <strong>Cotizar</strong>
+            <p data-i18n="service_9_copy">Lavado a presion para aceras, marquesinas, fachadas y areas exteriores.</p>
+            <strong data-i18n="quote">Cotizar</strong>
           </article>
         </div>
       </section>
 
       <section class="section details">
         <div class="section-head">
-          <p class="eyebrow">Menu de servicios</p>
-          <h2>Servicios detallados para cada necesidad.</h2>
+          <p class="eyebrow" data-i18n="details_eyebrow">Menu de servicios</p>
+          <h2 data-i18n="details_title">Servicios detallados para cada necesidad.</h2>
         </div>
         <div class="detail-list" aria-label="Servicios especializados">
-          <span>Detailing interior/exterior</span>
-          <span>Limpieza de motor</span>
-          <span>Servicios de limpieza profesional</span>
-          <span>Limpieza de muebles, sillones y colchones</span>
-          <span>Restauracion de plasticos (vehiculo)</span>
-          <span>Descontaminacion quimica y manual</span>
-          <span>Correccion de pintura</span>
-          <span>Restauracion de focos e insignias</span>
-          <span>Instalacion ceramica</span>
-          <span>Proteccion de pintura (PPF)</span>
-          <span>Limpieza a fondo de hogares</span>
-          <span>Mantenimiento de espacios</span>
-          <span>Limpieza de ventanas</span>
-          <span>Limpieza de tapiceria</span>
+          <span data-i18n="detail_1">Detailing interior/exterior</span>
+          <span data-i18n="detail_2">Limpieza de motor</span>
+          <span data-i18n="detail_3">Servicios de limpieza profesional</span>
+          <span data-i18n="detail_4">Limpieza de muebles, sillones y colchones</span>
+          <span data-i18n="detail_5">Restauración de plásticos (vehículo)</span>
+          <span data-i18n="detail_6">Descontaminación química y manual</span>
+          <span data-i18n="detail_7">Corrección de pintura</span>
+          <span data-i18n="detail_8">Restauración de focos e insignias</span>
+          <span data-i18n="detail_9">Instalación cerámica</span>
+          <span data-i18n="detail_10">Protección de pintura (PPF)</span>
+          <span data-i18n="detail_11">Limpieza a fondo de hogares</span>
+          <span data-i18n="detail_12">Mantenimiento de espacios</span>
+          <span data-i18n="detail_13">Limpieza de ventanas</span>
+          <span data-i18n="detail_14">Limpieza de tapicería</span>
         </div>
       </section>
 
       <section class="section reasons">
         <div class="section-head">
-          <p class="eyebrow">Confianza</p>
-          <h2>Por qué elegir Luciano Wash</h2>
+          <p class="eyebrow" data-i18n="trust_eyebrow">Confianza</p>
+          <h2 data-i18n="trust_title">Por qué elegir Luciano Wash</h2>
         </div>
         <div class="reason-grid">
           <article>
-            <strong>Atención en NY, Bronx</strong>
-            <p>Servicio local para clientes que necesitan respuesta rápida y trato directo.</p>
+            <strong data-i18n="trust_1_title">Atención en NY, Bronx</strong>
+            <p data-i18n="trust_1_copy">Servicio local para clientes que necesitan respuesta rápida y trato directo.</p>
           </article>
           <article>
-            <strong>Personal confiable</strong>
-            <p>Trabajo organizado, comunicación clara y cuidado al entrar a tu vehículo, hogar o negocio.</p>
+            <strong data-i18n="trust_2_title">Personal confiable</strong>
+            <p data-i18n="trust_2_copy">Trabajo organizado, comunicación clara y cuidado al entrar a tu vehículo, hogar o negocio.</p>
           </article>
           <article>
-            <strong>Productos de calidad</strong>
-            <p>Procesos y productos pensados para proteger telas, superficies, pintura y acabados.</p>
+            <strong data-i18n="trust_3_title">Productos de calidad</strong>
+            <p data-i18n="trust_3_copy">Procesos y productos pensados para proteger telas, superficies, pintura y acabados.</p>
           </article>
           <article>
-            <strong>Autos, hogares y negocios</strong>
-            <p>Una sola empresa para detailing, tapicería, alfombras, mantenimiento y limpieza comercial.</p>
+            <strong data-i18n="trust_4_title">Autos, hogares y negocios</strong>
+            <p data-i18n="trust_4_copy">Una sola empresa para detailing, tapicería, alfombras, mantenimiento y limpieza comercial.</p>
           </article>
           <article>
-            <strong>Cotización rápida por WhatsApp</strong>
-            <p>Envía lo que necesitas limpiar y recibe orientación directa para reservar tu servicio.</p>
-            <a class="mini-cta" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20una%20cotizaci%C3%B3n%20r%C3%A1pida." target="_blank" rel="noreferrer">Cotizar ahora</a>
+            <strong data-i18n="trust_5_title">Cotización rápida por WhatsApp</strong>
+            <p data-i18n="trust_5_copy">Envía lo que necesitas limpiar y recibe orientación directa para reservar tu servicio.</p>
+            <a class="mini-cta" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20una%20cotizaci%C3%B3n%20r%C3%A1pida." target="_blank" rel="noreferrer" data-i18n="trust_cta">Cotizar ahora</a>
           </article>
         </div>
       </section>
 
       <section class="section before-after" id="antes-despues">
         <div class="section-head">
-          <p class="eyebrow">Antes y despues</p>
-          <h2>Resultados que se ven al instante.</h2>
-          <p>Comparaciones visuales para mostrar lo que más vende en limpieza: el cambio real.</p>
+          <p class="eyebrow" data-i18n="before_eyebrow">Antes y después</p>
+          <h2 data-i18n="before_title">Resultados que se ven al instante.</h2>
+          <p data-i18n="before_copy">Comparaciones visuales para mostrar lo que más vende en limpieza: el cambio real.</p>
         </div>
         <div class="comparison-grid">
           <article class="comparison-card">
             <div class="comparison-media">
               <img src="assets/before-after-car.png" alt="Antes y despues de detailing de auto">
-              <span class="before-label">Antes</span>
-              <span class="after-label">Despues</span>
+              <span class="before-label" data-i18n="before_label">Antes</span>
+              <span class="after-label" data-i18n="after_label">Después</span>
             </div>
-            <h3>Auto</h3>
-            <p>Detailing exterior e interior para recuperar brillo, limpieza y presencia.</p>
+            <h3 data-i18n="compare_1_title">Auto</h3>
+            <p data-i18n="compare_1_copy">Detailing exterior e interior para recuperar brillo, limpieza y presencia.</p>
           </article>
           <article class="comparison-card">
             <div class="comparison-media">
               <img src="assets/before-after-upholstery.png" alt="Antes y despues de limpieza de sofa o colchon">
-              <span class="before-label">Antes</span>
-              <span class="after-label">Despues</span>
+              <span class="before-label" data-i18n="before_label">Antes</span>
+              <span class="after-label" data-i18n="after_label">Después</span>
             </div>
-            <h3>Sofa / colchon</h3>
-            <p>Extraccion profunda para manchas, polvo y telas de uso diario.</p>
+            <h3 data-i18n="compare_2_title">Sofá / colchón</h3>
+            <p data-i18n="compare_2_copy">Extracción profunda para manchas, polvo y telas de uso diario.</p>
           </article>
           <article class="comparison-card">
             <div class="comparison-media">
               <img src="assets/before-after-home-carpet.png" alt="Antes y despues de limpieza de alfombra en hogar">
-              <span class="before-label">Antes</span>
-              <span class="after-label">Despues</span>
+              <span class="before-label" data-i18n="before_label">Antes</span>
+              <span class="after-label" data-i18n="after_label">Después</span>
             </div>
-            <h3>Hogar / alfombra</h3>
-            <p>Espacios mas frescos, claros y listos para disfrutarse.</p>
+            <h3 data-i18n="compare_3_title">Hogar / alfombra</h3>
+            <p data-i18n="compare_3_copy">Espacios más frescos, claros y listos para disfrutarse.</p>
           </article>
         </div>
       </section>
 
       <section class="work-band" id="trabajos">
         <div class="section-head">
-          <p class="eyebrow">Resultados</p>
-          <h2>Autos limpios, hogares frescos y negocios listos.</h2>
+          <p class="eyebrow" data-i18n="results_eyebrow">Resultados</p>
+          <h2 data-i18n="results_title">Autos limpios, hogares frescos y negocios listos.</h2>
         </div>
         <div class="gallery">
           <div class="gallery-tile large">
@@ -224,73 +230,73 @@
           <div class="gallery-tile logo-tile">
             <img src="assets/brand-complete.svg?v=7" alt="Logo Luciano Wash Limpieza Profesional">
           </div>
-          <div class="gallery-tile wash">Autos</div>
-          <div class="gallery-tile interior">Muebles y alfombras</div>
-          <div class="gallery-tile ceramic">Piscinas y exteriores</div>
+          <div class="gallery-tile wash" data-i18n="gallery_1">Autos</div>
+          <div class="gallery-tile interior" data-i18n="gallery_2">Muebles y alfombras</div>
+          <div class="gallery-tile ceramic" data-i18n="gallery_3">Piscinas y exteriores</div>
         </div>
       </section>
 
       <section class="section booking" id="cita">
         <div class="booking-copy">
-          <p class="eyebrow">Agenda</p>
-          <h2>Solicita tu servicio</h2>
-          <p>Completa los datos y se abre WhatsApp con el mensaje listo para reservar o cotizar.</p>
+          <p class="eyebrow" data-i18n="booking_eyebrow">Agenda</p>
+          <h2 data-i18n="booking_title">Solicita tu servicio</h2>
+          <p data-i18n="booking_copy">Completa los datos y se abre WhatsApp con el mensaje listo para reservar o cotizar.</p>
           <ul>
-            <li>Confirmacion directa por WhatsApp.</li>
-            <li>Servicios para autos, hogares, negocios y exteriores.</li>
-            <li>Lista para agregar agenda y panel administrativo despues.</li>
+            <li data-i18n="booking_li_1">Confirmación directa por WhatsApp.</li>
+            <li data-i18n="booking_li_2">Servicios para autos, hogares, negocios y exteriores.</li>
+            <li data-i18n="booking_li_3">Lista para agregar agenda y panel administrativo después.</li>
           </ul>
         </div>
         <form class="booking-form" id="bookingForm">
           <label>
-            Nombre
-            <input name="name" autocomplete="name" placeholder="Tu nombre" required>
+            <span data-i18n="form_name">Nombre</span>
+            <input name="name" autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required>
           </label>
           <label>
-            Que necesitas limpiar
-            <input name="item" placeholder="Ej. SUV, sofa, oficina, piscina" required>
+            <span data-i18n="form_item">Qué necesitas limpiar</span>
+            <input name="item" placeholder="Ej. SUV, sofá, oficina, piscina" data-i18n-placeholder="form_item_placeholder" required>
           </label>
           <label>
-            Servicio
+            <span data-i18n="form_service">Servicio</span>
             <select name="service" required>
-              <option value="">Selecciona</option>
-              <option>Detailing de autos</option>
-              <option>Limpieza de motor</option>
-              <option>Correccion de pintura</option>
-              <option>Instalacion ceramica</option>
-              <option>Proteccion de pintura (PPF)</option>
-              <option>Lavado de camiones</option>
-              <option>Servicios de limpieza profesional</option>
-              <option>Limpieza de muebles, sillones y colchones</option>
-              <option>Limpieza de alfombras</option>
-              <option>Restauracion de plasticos (vehiculo)</option>
-              <option>Restauracion de focos e insignias</option>
-              <option>Descontaminacion quimica y manual</option>
-              <option>Limpieza y mantenimiento de piscinas</option>
-              <option>Limpieza residencial</option>
-              <option>Limpieza comercial</option>
-              <option>Limpieza de ventanas</option>
-              <option>Mantenimiento programado</option>
-              <option>Lavado a presion / Pressure Washing</option>
+              <option value="" data-i18n="form_select">Selecciona</option>
+              <option data-i18n="option_1">Detailing de autos</option>
+              <option data-i18n="option_2">Limpieza de motor</option>
+              <option data-i18n="option_3">Corrección de pintura</option>
+              <option data-i18n="option_4">Instalación cerámica</option>
+              <option data-i18n="option_5">Protección de pintura (PPF)</option>
+              <option data-i18n="option_6">Lavado de camiones</option>
+              <option data-i18n="option_7">Servicios de limpieza profesional</option>
+              <option data-i18n="option_8">Limpieza de muebles, sillones y colchones</option>
+              <option data-i18n="option_9">Limpieza de alfombras</option>
+              <option data-i18n="option_10">Restauración de plásticos (vehículo)</option>
+              <option data-i18n="option_11">Restauración de focos e insignias</option>
+              <option data-i18n="option_12">Descontaminación química y manual</option>
+              <option data-i18n="option_13">Limpieza y mantenimiento de piscinas</option>
+              <option data-i18n="option_14">Limpieza residencial</option>
+              <option data-i18n="option_15">Limpieza comercial</option>
+              <option data-i18n="option_16">Limpieza de ventanas</option>
+              <option data-i18n="option_17">Mantenimiento programado</option>
+              <option data-i18n="option_18">Lavado a presión / Pressure Washing</option>
             </select>
           </label>
           <label>
-            Fecha deseada
+            <span data-i18n="form_date">Fecha deseada</span>
             <input name="date" type="date" required>
           </label>
           <label>
-            Ubicacion
-            <input name="location" placeholder="Sector o direccion">
+            <span data-i18n="form_location">Ubicación</span>
+            <input name="location" placeholder="Sector o dirección" data-i18n-placeholder="form_location_placeholder">
           </label>
-          <button class="button primary full" type="submit">Enviar por WhatsApp</button>
+          <button class="button primary full" type="submit" data-i18n="form_submit">Enviar por WhatsApp</button>
           <p class="form-note" id="formNote" role="status"></p>
         </form>
       </section>
 
       <section class="contact-band" aria-label="Contacto">
         <div>
-          <p class="eyebrow">Contactanos</p>
-          <h2>Reserva ahora</h2>
+          <p class="eyebrow" data-i18n="contact_eyebrow">Contáctanos</p>
+          <h2 data-i18n="contact_title">Reserva ahora</h2>
         </div>
         <div class="contact-grid">
           <a href="tel:+19296429620">(929)-642-9620</a>
@@ -303,7 +309,7 @@
 
     <a class="float-whatsapp" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20cotizar%20un%20servicio." target="_blank" rel="noreferrer" aria-label="Cotizar por WhatsApp">
       <span class="wa-dot">WA</span>
-      <span>Cotizar</span>
+      <span data-i18n="float_quote">Cotizar</span>
     </a>
 
     <footer class="footer">
@@ -311,6 +317,6 @@
       <a href="mailto:lucianowashpr@gmail.com">lucianowashpr@gmail.com</a>
     </footer>
 
-    <script src="app.js?v=22"></script>
+    <script src="app.js?v=23"></script>
   </body>
 </html>
