@@ -846,11 +846,17 @@ button {
 
 .footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 28px clamp(18px, 5vw, 64px);
   border-top: 1px solid var(--line);
   color: var(--muted);
+}
+
+.yc-credit {
+  color: var(--blue);
+  font-weight: 900;
 }
 
 @media (max-width: 920px) {
