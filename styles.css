@@ -411,7 +411,14 @@ h3 {
 
 .logo-tile {
   padding: 18px;
-  background: #ffffff;
+  background:
+    linear-gradient(45deg, rgba(9, 33, 48, 0.06) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(9, 33, 48, 0.06) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(9, 33, 48, 0.06) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(9, 33, 48, 0.06) 75%),
+    #f8fcff;
+  background-position: 0 0, 0 14px, 14px -14px, -14px 0;
+  background-size: 28px 28px;
 }
 
 .logo-tile img {
