@@ -260,7 +260,7 @@ h3 {
   background: rgba(36, 184, 255, 0.18);
 }
 
-.quick-panel span {
+.quick-panel > span {
   padding: 16px;
   background: rgba(4, 25, 39, 0.72);
   color: var(--muted);
@@ -269,6 +269,11 @@ h3 {
 .quick-panel strong {
   display: block;
   color: var(--ink);
+}
+
+.quick-panel > span > span {
+  display: block;
+  margin-top: 3px;
 }
 
 .section,
