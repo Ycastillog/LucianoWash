@@ -33,6 +33,6 @@
     <text x="0" y="174" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="900" fill="url(#water)" stroke="#ffffff" stroke-width="4" paint-order="stroke">Wash</text>
     <rect x="4" y="206" width="510" height="56" rx="8" fill="#0d2736"/>
     <text x="259" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900" fill="#ffffff">LIMPIEZA PROFESIONAL</text>
-    <text x="6" y="318" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" fill="#0b70b7">Autos | Hogares | Muebles | Negocios</text>
+    <text x="6" y="318" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="800" fill="#0b70b7">Autos, hogares, muebles y negocios</text>
   </g>
 </svg>
