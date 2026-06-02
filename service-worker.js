@@ -1,4 +1,4 @@
-const CACHE_NAME = "luciano-wash-v31";
+const CACHE_NAME = "luciano-wash-v32";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const ASSETS = [
   "./manifest.webmanifest",
   "./assets/icon.svg",
   "./assets/brand-logo.png",
+  "./assets/luciano-wash-logo-transparent.png",
   "./assets/brand-complete.svg",
   "./assets/brand-complete-dark.svg",
   "./assets/brand-mark.svg",
