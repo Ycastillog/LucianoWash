@@ -170,7 +170,7 @@ img {
 
 .hero-logo,
 .hero-content picture {
-  width: clamp(260px, 34vw, 420px);
+  width: clamp(300px, 38vw, 500px);
 }
 
 .hero-logo {
@@ -178,7 +178,9 @@ img {
   object-fit: contain;
   background: transparent;
   border: 0;
-  filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.32));
+  filter:
+    drop-shadow(0 16px 24px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 18px rgba(36, 184, 255, 0.18));
 }
 
 .eyebrow {
