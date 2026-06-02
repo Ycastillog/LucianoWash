@@ -105,6 +105,8 @@ const translations = {
     form_date: "Fecha deseada",
     form_location: "Ubicación",
     form_location_placeholder: "Sector o dirección",
+    form_photo: "Foto para estimación",
+    form_photo_help: "Sube una foto del auto, mueble o área. WhatsApp se abrirá con el mensaje; adjunta esa foto en el chat para recibir una estimación.",
     form_submit: "Enviar por WhatsApp",
     contact_eyebrow: "Contáctanos",
     contact_title: "Reserva ahora",
@@ -134,6 +136,8 @@ const translations = {
     msgService: "Servicio",
     msgDate: "Fecha deseada",
     msgLocation: "Ubicación",
+    msgPhoto: "Foto para estimación",
+    msgPhotoReady: "Foto seleccionada, la adjuntaré en este chat.",
     msgPending: "Por confirmar",
   },
   en: {
@@ -236,6 +240,8 @@ const translations = {
     form_date: "Preferred date",
     form_location: "Location",
     form_location_placeholder: "Area or address",
+    form_photo: "Photo for estimate",
+    form_photo_help: "Upload a photo of the car, furniture or area. WhatsApp will open with the message; attach that photo in the chat to receive an estimate.",
     form_submit: "Send by WhatsApp",
     contact_eyebrow: "Contact us",
     contact_title: "Book now",
@@ -265,6 +271,8 @@ const translations = {
     msgService: "Service",
     msgDate: "Preferred date",
     msgLocation: "Location",
+    msgPhoto: "Estimate photo",
+    msgPhotoReady: "Photo selected, I will attach it in this chat.",
     msgPending: "To confirm",
   },
 };
@@ -304,6 +312,7 @@ if ("serviceWorker" in navigator) {
 bookingForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(bookingForm);
+  const photo = data.get("photo");
   const lang = localStorage.getItem("lucianoWashLang") || "es";
   const dictionary = translations[lang] || translations.es;
   const message = [
@@ -313,6 +322,7 @@ bookingForm.addEventListener("submit", (event) => {
     `${dictionary.msgService}: ${data.get("service")}`,
     `${dictionary.msgDate}: ${data.get("date")}`,
     `${dictionary.msgLocation}: ${data.get("location") || dictionary.msgPending}`,
+    `${dictionary.msgPhoto}: ${photo && photo.name ? dictionary.msgPhotoReady : dictionary.msgPending}`,
   ].join("\n");
 
   formNote.textContent = dictionary.formNote;

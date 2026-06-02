@@ -8,12 +8,12 @@
     <title>Luciano Wash | Limpieza profesional</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/brand-mark.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=18">
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="#inicio" aria-label="Luciano Wash inicio">
-        <img class="brand-logo" src="assets/brand-mark.svg?v=4" alt="">
+        <img class="brand-logo" src="assets/brand-mark.svg?v=5" alt="">
         <span>
           <strong>Luciano Wash</strong>
           <small data-i18n="brand_subtitle">Limpieza profesional</small>
@@ -39,8 +39,8 @@
         <div class="hero-shade"></div>
         <div class="hero-content">
           <picture>
-            <source media="(max-width: 640px)" srcset="assets/brand-mobile.svg?v=1">
-            <img class="hero-logo" src="assets/brand-complete.svg?v=7" alt="Luciano Wash Limpieza Profesional">
+            <source media="(max-width: 640px)" srcset="assets/brand-mobile.svg?v=2">
+            <img class="hero-logo" src="assets/brand-complete.svg?v=8" alt="Luciano Wash Limpieza Profesional">
           </picture>
           <p class="eyebrow" data-i18n="hero_eyebrow">Servicios profesionales de limpieza</p>
           <h1 data-i18n="hero_title">Limpieza que se nota</h1>
@@ -228,7 +228,7 @@
             <img src="assets/hero-real-results.png" alt="Resultados de limpieza profesional de Luciano Wash">
           </div>
           <div class="gallery-tile logo-tile">
-            <img src="assets/brand-complete.svg?v=7" alt="Logo Luciano Wash Limpieza Profesional">
+            <img src="assets/brand-complete.svg?v=8" alt="Logo Luciano Wash Limpieza Profesional">
           </div>
           <div class="gallery-tile wash" data-i18n="gallery_1">Autos</div>
           <div class="gallery-tile interior" data-i18n="gallery_2">Muebles y alfombras</div>
@@ -288,6 +288,11 @@
             <span data-i18n="form_location">Ubicación</span>
             <input name="location" placeholder="Sector o dirección" data-i18n-placeholder="form_location_placeholder">
           </label>
+          <label class="file-field">
+            <span data-i18n="form_photo">Foto para estimación</span>
+            <input name="photo" type="file" accept="image/*" capture="environment" required>
+          </label>
+          <p class="form-help" data-i18n="form_photo_help">Sube una foto del auto, mueble o área. WhatsApp se abrirá con el mensaje; adjunta esa foto en el chat para recibir una estimación.</p>
           <button class="button primary full" type="submit" data-i18n="form_submit">Enviar por WhatsApp</button>
           <p class="form-note" id="formNote" role="status"></p>
         </form>
@@ -317,6 +322,6 @@
       <a href="mailto:lucianowashpr@gmail.com">lucianowashpr@gmail.com</a>
     </footer>
 
-    <script src="app.js?v=23"></script>
+    <script src="app.js?v=24"></script>
   </body>
 </html>

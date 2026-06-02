@@ -14,11 +14,7 @@
     </filter>
   </defs>
 
-  <rect width="1080" height="420" rx="34" fill="#ffffff"/>
-  <path d="M0 318c112-42 237-52 375-30 170 27 286 11 402-37 111-46 205-55 303-23v192H0z" fill="#eaf8ff"/>
-
   <g transform="translate(42 50)" filter="url(#lift)">
-    <rect x="0" y="0" width="288" height="288" rx="48" fill="#f7fcff" stroke="#c9e7f7" stroke-width="5"/>
     <path d="M68 124 139 66l72 58" fill="none" stroke="#0d2736" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M89 152h101" fill="none" stroke="#0d2736" stroke-width="14" stroke-linecap="round"/>
     <path d="M78 148c18-34 44-51 79-51h17c35 0 61 17 80 51" fill="#bfc6ca" stroke="#0d2736" stroke-width="10" stroke-linejoin="round"/>

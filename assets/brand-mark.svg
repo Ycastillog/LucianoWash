@@ -9,14 +9,14 @@
       <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#081723" flood-opacity=".18"/>
     </filter>
   </defs>
-  <rect width="512" height="512" rx="104" fill="#ffffff"/>
-  <path d="M0 376c72-30 154-37 245-21 106 18 186 7 267-27v184H0z" fill="#eaf8ff"/>
   <g filter="url(#shadow)">
-    <path d="M124 191c27-52 68-78 123-78h36c55 0 96 26 124 78" fill="none" stroke="#0d2736" stroke-width="28" stroke-linecap="round"/>
-    <path d="M105 214h302" fill="none" stroke="#0d2736" stroke-width="30" stroke-linecap="round"/>
-    <path d="M146 204h52M314 204h52" stroke="#ffffff" stroke-width="19" stroke-linecap="round"/>
+    <path d="M124 191c27-52 68-78 123-78h36c55 0 96 26 124 78" fill="none" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+    <path d="M124 191c27-52 68-78 123-78h36c55 0 96 26 124 78" fill="none" stroke="#0d2736" stroke-width="26" stroke-linecap="round"/>
+    <path d="M105 214h302" fill="none" stroke="#ffffff" stroke-width="40" stroke-linecap="round"/>
+    <path d="M105 214h302" fill="none" stroke="#0d2736" stroke-width="28" stroke-linecap="round"/>
+    <path d="M146 204h52M314 204h52" stroke="#ffffff" stroke-width="17" stroke-linecap="round"/>
     <path d="M105 258c41 44 92 66 153 66s112-22 153-66" fill="none" stroke="url(#water)" stroke-width="30" stroke-linecap="round"/>
     <path d="M94 106c26 36 39 64 39 86 0 28-19 46-44 46s-44-18-44-46c0-22 16-50 49-86z" fill="url(#water)" stroke="#0d2736" stroke-width="15"/>
   </g>
-  <text x="256" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" fill="#0d2736">LW</text>
+  <text x="256" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="116" font-weight="900" fill="#ffffff" stroke="#0d2736" stroke-width="8" paint-order="stroke">LW</text>
 </svg>
