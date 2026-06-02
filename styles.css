@@ -183,6 +183,11 @@ img {
     drop-shadow(0 0 18px rgba(36, 184, 255, 0.18));
 }
 
+.hero-logo.original-logo {
+  width: clamp(260px, 33vw, 430px);
+  max-height: min(44vh, 430px);
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--green);
@@ -803,6 +808,11 @@ button {
 
   .hero-logo {
     width: 100%;
+  }
+
+  .hero-logo.original-logo {
+    width: min(82vw, 315px);
+    max-height: none;
   }
 
   .hero-content picture {
