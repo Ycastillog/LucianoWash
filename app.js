@@ -3,7 +3,13 @@ const WHATSAPP_NUMBER = "19296429620";
 const bookingForm = document.querySelector("#bookingForm");
 const formNote = document.querySelector("#formNote");
 const langButtons = document.querySelectorAll("[data-lang]");
-const floatingWhatsApp = document.querySelector(".float-whatsapp");
+const chatWidget = document.querySelector(".chat-widget");
+const chatLauncher = document.querySelector(".chat-launcher");
+const chatPanel = document.querySelector("#chatPanel");
+const chatClose = document.querySelector(".chat-close");
+const chatMessage = document.querySelector("#chatMessage");
+const chatSend = document.querySelector("#chatSend");
+const chatOptionButtons = document.querySelectorAll("[data-chat-message]");
 const hero = document.querySelector(".hero");
 
 const translations = {
@@ -143,6 +149,20 @@ const translations = {
     contact_eyebrow: "Contáctanos",
     contact_title: "Reserva ahora",
     float_quote: "Cotizar",
+    chat_status: "Respuesta por WhatsApp",
+    chat_intro: "Hola, cuéntanos qué necesitas limpiar y envía una foto para cotizar más rápido.",
+    chat_label: "Mensaje",
+    chat_placeholder: "Ej. Tengo un sofá de 3 plazas y puedo enviar foto.",
+    chat_send: "Enviar por WhatsApp",
+    chat_option_auto: "Auto",
+    chat_option_sofa: "Sofá / colchón",
+    chat_option_home: "Hogar",
+    chat_option_pressure: "Pressure Washing",
+    chat_default_message: "Hola Luciano Wash, quiero cotizar un servicio de limpieza.",
+    chat_msg_auto: "Quiero cotizar detailing de auto.",
+    chat_msg_sofa: "Quiero cotizar limpieza de sofá o colchón.",
+    chat_msg_home: "Quiero cotizar limpieza residencial.",
+    chat_msg_pressure: "Quiero cotizar Pressure Washing.",
     option_1: "Detailing de autos",
     option_2: "Limpieza de motor",
     option_3: "Corrección de pintura",
@@ -308,6 +328,20 @@ const translations = {
     contact_eyebrow: "Contact us",
     contact_title: "Book now",
     float_quote: "Quote",
+    chat_status: "Reply by WhatsApp",
+    chat_intro: "Hi, tell us what you need cleaned and send a photo for a faster quote.",
+    chat_label: "Message",
+    chat_placeholder: "Ex. I have a 3-seat sofa and can send a photo.",
+    chat_send: "Send by WhatsApp",
+    chat_option_auto: "Auto",
+    chat_option_sofa: "Sofa / mattress",
+    chat_option_home: "Home",
+    chat_option_pressure: "Pressure Washing",
+    chat_default_message: "Hello Luciano Wash, I want a quote for a cleaning service.",
+    chat_msg_auto: "I want a quote for auto detailing.",
+    chat_msg_sofa: "I want a quote for sofa or mattress cleaning.",
+    chat_msg_home: "I want a quote for residential cleaning.",
+    chat_msg_pressure: "I want a quote for Pressure Washing.",
     option_1: "Auto Detailing",
     option_2: "Engine cleaning",
     option_3: "Paint correction",
@@ -358,11 +392,19 @@ function setLanguage(lang) {
     }
   });
 
+  document.querySelectorAll("[data-chat-key]").forEach((node) => {
+    const messageKey = node.dataset.chatKey?.replace("chat_option_", "chat_msg_");
+    if (messageKey && dictionary[messageKey]) {
+      node.dataset.chatMessage = dictionary[messageKey];
+    }
+  });
+
   langButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === lang);
   });
 
   localStorage.setItem("lucianoWashLang", lang);
+  updateChatLink();
 }
 
 if ("serviceWorker" in navigator) {
@@ -395,22 +437,64 @@ langButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-function updateFloatingWhatsApp() {
-  if (!floatingWhatsApp || !hero) {
+function updateChatLink() {
+  if (!chatSend) {
+    return;
+  }
+
+  const text = chatMessage && chatMessage.value.trim()
+    ? chatMessage.value.trim()
+    : (translations[document.documentElement.lang] || translations.es).chat_default_message;
+  chatSend.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
+function setChatOpen(isOpen) {
+  if (!chatWidget || !chatPanel || !chatLauncher) {
+    return;
+  }
+
+  chatWidget.classList.toggle("is-open", isOpen);
+  chatPanel.hidden = !isOpen;
+  chatLauncher.setAttribute("aria-expanded", String(isOpen));
+  if (isOpen && chatMessage) {
+    chatMessage.focus();
+  }
+}
+
+function updateFloatingChat() {
+  if (!chatWidget || !hero) {
     return;
   }
 
   if (!window.matchMedia("(max-width: 640px)").matches) {
-    floatingWhatsApp.classList.add("is-visible");
+    chatWidget.classList.add("is-visible");
     return;
   }
 
   const heroBottom = hero.getBoundingClientRect().bottom;
-  floatingWhatsApp.classList.toggle("is-visible", heroBottom < window.innerHeight - 70);
+  chatWidget.classList.toggle("is-visible", heroBottom < window.innerHeight - 70);
 }
 
-window.addEventListener("scroll", updateFloatingWhatsApp, { passive: true });
-window.addEventListener("resize", updateFloatingWhatsApp);
+chatLauncher?.addEventListener("click", () => {
+  setChatOpen(!chatWidget.classList.contains("is-open"));
+});
+
+chatClose?.addEventListener("click", () => setChatOpen(false));
+
+chatMessage?.addEventListener("input", updateChatLink);
+
+chatOptionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (chatMessage) {
+      chatMessage.value = button.dataset.chatMessage || "";
+      updateChatLink();
+    }
+  });
+});
+
+window.addEventListener("scroll", updateFloatingChat, { passive: true });
+window.addEventListener("resize", updateFloatingChat);
 
 setLanguage(localStorage.getItem("lucianoWashLang") || "es");
-updateFloatingWhatsApp();
+updateChatLink();
+updateFloatingChat();

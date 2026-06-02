@@ -8,7 +8,7 @@
     <title>Luciano Wash - Limpieza profesional</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/luciano-wash-logo-clean.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=30">
+    <link rel="stylesheet" href="styles.css?v=33">
   </head>
   <body>
     <header class="topbar">
@@ -399,10 +399,35 @@
       </section>
     </main>
 
-    <a class="float-whatsapp" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20cotizar%20un%20servicio." target="_blank" rel="noreferrer" aria-label="Cotizar por WhatsApp">
-      <span class="wa-dot">WA</span>
-      <span data-i18n="float_quote">Cotizar</span>
-    </a>
+    <aside class="chat-widget" aria-label="Chat Luciano Wash">
+      <div class="chat-panel" id="chatPanel" hidden>
+        <div class="chat-head">
+          <div>
+            <strong>Luciano Wash</strong>
+            <span data-i18n="chat_status">Respuesta por WhatsApp</span>
+          </div>
+          <button class="chat-close" type="button" aria-label="Cerrar chat">×</button>
+        </div>
+        <div class="chat-body">
+          <p class="chat-bubble" data-i18n="chat_intro">Hola, cuéntanos qué necesitas limpiar y envía una foto para cotizar más rápido.</p>
+          <div class="chat-options" aria-label="Opciones rápidas">
+            <button type="button" data-chat-key="chat_option_auto" data-chat-message="Quiero cotizar detailing de auto" data-i18n="chat_option_auto">Auto</button>
+            <button type="button" data-chat-key="chat_option_sofa" data-chat-message="Quiero cotizar limpieza de sofá o colchón" data-i18n="chat_option_sofa">Sofá / colchón</button>
+            <button type="button" data-chat-key="chat_option_home" data-chat-message="Quiero cotizar limpieza residencial" data-i18n="chat_option_home">Hogar</button>
+            <button type="button" data-chat-key="chat_option_pressure" data-chat-message="Quiero cotizar Pressure Washing" data-i18n="chat_option_pressure">Pressure Washing</button>
+          </div>
+          <label class="chat-input-label">
+            <span data-i18n="chat_label">Mensaje</span>
+            <textarea id="chatMessage" rows="3" data-i18n-placeholder="chat_placeholder" placeholder="Ej. Tengo un sofá de 3 plazas y puedo enviar foto."></textarea>
+          </label>
+          <a class="chat-send" id="chatSend" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20cotizar%20un%20servicio." target="_blank" rel="noreferrer" data-i18n="chat_send">Enviar por WhatsApp</a>
+        </div>
+      </div>
+      <button class="chat-launcher" type="button" aria-controls="chatPanel" aria-expanded="false">
+        <span class="wa-dot">WA</span>
+        <span data-i18n="float_quote">Cotizar</span>
+      </button>
+    </aside>
 
     <footer class="footer">
       <span>Luciano Wash Limpieza Profesional</span>
@@ -411,6 +436,6 @@
     </footer>
 
     <script async src="https://www.tiktok.com/embed.js"></script>
-    <script src="app.js?v=30"></script>
+    <script src="app.js?v=33"></script>
   </body>
 </html>
