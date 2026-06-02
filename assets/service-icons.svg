@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="car" viewBox="0 0 64 64">
+    <path d="M13 35l5-13c2-5 6-8 12-8h8c6 0 10 3 12 8l5 13" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 35h48v12H10z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M18 47v5M50 47v5" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M18 40h8M42 40h8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="truck" viewBox="0 0 64 64">
+    <path d="M8 18h31v31H8zM39 29h9l8 9v11H39z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="20" cy="50" r="5" fill="none" stroke="currentColor" stroke-width="4"/>
+    <circle cx="48" cy="50" r="5" fill="none" stroke="currentColor" stroke-width="4"/>
+    <path d="M14 27h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="sofa" viewBox="0 0 64 64">
+    <path d="M17 31V20c0-4 3-7 7-7h16c4 0 7 3 7 7v11" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M12 31c-4 0-7 3-7 7v11h54V38c0-4-3-7-7-7" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M14 49v5M50 49v5M23 31h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="rug" viewBox="0 0 64 64">
+    <path d="M14 10h36v44H14z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M22 10v44M42 10v44M14 20h36M14 44h36" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <path d="M25 31c4-5 10-5 14 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="restore" viewBox="0 0 64 64">
+    <path d="M18 44l20-20 8 8-20 20H18z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M35 21l5-5 8 8-5 5M49 10l2 6 6 2-6 2-2 6-2-6-6-2 6-2zM16 12l1 4 4 1-4 1-1 4-1-4-4-1 4-1z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="pool" viewBox="0 0 64 64">
+    <path d="M13 38c6-5 12-5 18 0s12 5 18 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M13 49c6-5 12-5 18 0s12 5 18 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M38 31V13h11M38 22h11" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18 31V16c0-4 3-7 7-7s7 3 7 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="home" viewBox="0 0 64 64">
+    <path d="M9 31L32 12l23 19" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 29v24h36V29" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M27 53V39h10v14" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="business" viewBox="0 0 64 64">
+    <path d="M13 54V12h30v42M43 25h12v29H9" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M22 21h5M34 21h5M22 31h5M34 31h5M22 41h5M34 41h5" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="pressure" viewBox="0 0 64 64">
+    <path d="M12 43l19-19 9 9-19 19H12zM38 22l7-7 4 4-7 7" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 12l8-8M52 22h10M43 8V2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M45 34c4 2 8 2 12 0M42 42c5 3 10 3 15 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+</svg>

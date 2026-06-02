@@ -1,0 +1,17 @@
+{
+  "name": "Luciano Wash Limpieza Profesional",
+  "short_name": "Luciano Wash",
+  "description": "Limpieza profesional para autos, hogares, negocios, muebles, alfombras, piscinas y exteriores.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#070b0f",
+  "theme_color": "#0a0f14",
+  "icons": [
+    {
+      "src": "assets/brand-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

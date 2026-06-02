@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 360" role="img" aria-label="Luciano Wash Limpieza Profesional">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#28d4ff"/>
+      <stop offset=".52" stop-color="#0d8bd7"/>
+      <stop offset="1" stop-color="#075ca7"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#dfe8ec"/>
+    </linearGradient>
+    <filter id="lift" x="-18%" y="-22%" width="136%" height="144%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#081723" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="360" rx="34" fill="#ffffff"/>
+  <path d="M0 274c112-42 237-52 375-30 170 27 286 11 402-37 111-46 205-55 303-23v176H0z" fill="#eaf8ff"/>
+
+  <g transform="translate(42 36)" filter="url(#lift)">
+    <rect x="0" y="0" width="278" height="278" rx="48" fill="#f7fcff" stroke="#c9e7f7" stroke-width="5"/>
+    <path d="M68 124 139 66l72 58" fill="none" stroke="#0d2736" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M89 152h101" fill="none" stroke="#0d2736" stroke-width="14" stroke-linecap="round"/>
+    <path d="M78 148c18-34 44-51 79-51h17c35 0 61 17 80 51" fill="#bfc6ca" stroke="#0d2736" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M99 140h29M169 140h29" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+    <path d="M53 176c30 34 69 51 116 51s86-17 116-51" fill="none" stroke="url(#water)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M48 83c14 20 22 36 22 49 0 17-11 28-26 28s-26-11-26-28c0-13 10-29 30-49z" fill="url(#water)" stroke="#0d2736" stroke-width="8"/>
+    <circle cx="236" cy="94" r="20" fill="url(#water)" stroke="#0d2736" stroke-width="7"/>
+    <circle cx="248" cy="154" r="12" fill="url(#water)" stroke="#0d2736" stroke-width="5"/>
+    <path d="M217 57h28v28h-28zM231 38v66M198 71h66" fill="none" stroke="#28d4ff" stroke-width="9" stroke-linecap="round"/>
+    <text x="139" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900" fill="#0d2736">LW</text>
+  </g>
+
+  <g transform="translate(362 64)">
+    <text x="0" y="76" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" fill="#0d2736">Luciano</text>
+    <text x="0" y="174" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="900" fill="url(#shine)" stroke="#0d2736" stroke-width="12" paint-order="stroke">Wash</text>
+    <text x="0" y="174" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="900" fill="url(#water)" stroke="#ffffff" stroke-width="4" paint-order="stroke">Wash</text>
+    <rect x="4" y="206" width="510" height="56" rx="8" fill="#0d2736"/>
+    <text x="259" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900" fill="#ffffff">LIMPIEZA PROFESIONAL</text>
+    <text x="6" y="302" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800" fill="#0b70b7">Autos | Hogares | Muebles | Negocios</text>
+  </g>
+</svg>
