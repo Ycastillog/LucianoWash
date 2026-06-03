@@ -187,8 +187,8 @@ img {
 }
 
 .hero-logo.original-logo {
-  width: clamp(190px, 23vw, 310px);
-  max-height: min(31vh, 310px);
+  width: clamp(210px, 25vw, 340px);
+  max-height: min(34vh, 340px);
 }
 
 .eyebrow {
@@ -1204,7 +1204,7 @@ button {
   }
 
   .hero-logo.original-logo {
-    width: min(62vw, 220px);
+    width: min(66vw, 240px);
     max-height: none;
   }
 
