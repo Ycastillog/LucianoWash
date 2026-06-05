@@ -455,8 +455,8 @@ h3 {
 .service-card {
   display: flex;
   flex-direction: column;
-  grid-column: span 2;
-  min-height: 410px;
+  grid-column: span 3;
+  min-height: 360px;
   padding: 0 22px 22px;
   border: 1px solid #cfe4ee;
   background: #ffffff;
@@ -477,6 +477,28 @@ h3 {
 
 .service-card.icon-card {
   background: linear-gradient(180deg, #ffffff 0%, #eef8fc 100%);
+}
+
+.service-card.compact-cta {
+  grid-column: span 6;
+  min-height: auto;
+  background: linear-gradient(135deg, #061925 0%, #0a324c 50%, #0b6aa8 100%);
+  color: #ffffff;
+  border-color: rgba(34, 215, 255, 0.52);
+}
+
+.service-card.compact-cta p {
+  color: #d8f4ff;
+}
+
+.service-card.compact-cta .service-tag {
+  background: rgba(255, 255, 255, 0.14);
+  color: #22d7ff;
+}
+
+.service-card.compact-cta .card-cta {
+  background: #27d366;
+  color: #04140a;
 }
 
 .service-card p {
@@ -1224,7 +1246,8 @@ button {
   }
 
   .service-card,
-  .service-card.spotlight {
+  .service-card.spotlight,
+  .service-card.compact-cta {
     grid-column: span 1;
   }
 
