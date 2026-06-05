@@ -436,6 +436,10 @@ h3 {
   color: #092130;
 }
 
+#servicios .section-head {
+  max-width: 760px;
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -455,6 +459,24 @@ h3 {
 .service-card.featured {
   background: #e8f8ff;
   border-color: rgba(0, 200, 255, 0.62);
+}
+
+.service-card.no-media {
+  padding-top: 28px;
+  background:
+    linear-gradient(135deg, rgba(22, 191, 243, 0.1), rgba(255, 255, 255, 0) 42%),
+    #ffffff;
+}
+
+.service-card.no-media .icon {
+  width: 82px;
+  height: 82px;
+  margin: 0 0 22px;
+}
+
+.service-card.no-media .icon svg {
+  width: 46px;
+  height: 46px;
 }
 
 .service-card p {
@@ -1163,6 +1185,10 @@ button {
     min-height: auto;
   }
 
+  .service-card.no-media {
+    min-height: 260px;
+  }
+
   .proof-strip {
     grid-template-columns: 1fr;
   }
@@ -1226,6 +1252,16 @@ button {
       linear-gradient(0deg, rgba(4, 24, 38, 0.94) 0%, rgba(4, 24, 38, 0) 48%);
   }
 
+  #servicios .section-head {
+    margin-bottom: 20px;
+  }
+
+  #servicios h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 2.55rem);
+    line-height: 1.05;
+  }
+
   .quick-panel,
   .contact-grid,
   .detail-list,
@@ -1257,6 +1293,30 @@ button {
     width: 100%;
     max-width: none;
     margin: 26px 0 78px;
+  }
+
+  .service-card {
+    min-height: auto;
+    padding: 0 16px 18px;
+  }
+
+  .service-media {
+    height: 138px;
+    margin: 0 -16px 0;
+  }
+
+  .service-card.no-media {
+    padding: 18px;
+  }
+
+  .service-card.no-media .icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 14px;
+  }
+
+  .service-card h3 {
+    font-size: 1.08rem;
   }
 
   .chat-widget {
