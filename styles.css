@@ -1250,6 +1250,12 @@ button {
   font-size: 1.1rem;
 }
 
+.manager-credit {
+  margin-top: 6px;
+  color: #d8f4ff;
+  font-weight: 800;
+}
+
 .footer-social {
   display: flex;
   flex-wrap: wrap;
