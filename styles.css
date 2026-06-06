@@ -1077,11 +1077,11 @@ button {
 }
 
 .contact-grid a[href^="tel"]::before {
-  content: "📞";
+  content: "☎️";
 }
 
 .contact-grid a[href*="instagram"]::before {
-  content: "📸";
+  content: "📷";
 }
 
 .contact-grid span::before {
@@ -1089,7 +1089,7 @@ button {
 }
 
 .contact-grid a[href^="mailto"]::before {
-  content: "✉️";
+  content: "📧";
 }
 
 .chat-widget {
