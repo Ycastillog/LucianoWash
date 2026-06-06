@@ -1077,11 +1077,21 @@ button {
 }
 
 .contact-grid a[href^="tel"]::before {
-  content: "☎️";
+  content: "WA";
+  background: #27d366;
+  border-color: #27d366;
+  color: #04140a;
+  font-size: 0.82rem;
+  font-weight: 1000;
 }
 
 .contact-grid a[href*="instagram"]::before {
-  content: "📷";
+  content: "IG";
+  background: linear-gradient(135deg, #feda75 0%, #fa7e1e 28%, #d62976 58%, #962fbf 78%, #4f5bd5 100%);
+  border-color: rgba(214, 41, 118, 0.42);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 1000;
 }
 
 .contact-grid span::before {
