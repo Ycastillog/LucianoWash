@@ -1054,11 +1054,42 @@ button {
   min-height: 58px;
   display: flex;
   align-items: center;
+  gap: 12px;
   padding: 12px 16px;
   background: #ffffff;
   border: 1px solid #d7e3e8;
   color: #0f4362;
   font-weight: 900;
+}
+
+.contact-grid a::before,
+.contact-grid span::before {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 36px;
+  background: #e7f8ff;
+  border: 1px solid rgba(34, 215, 255, 0.62);
+  color: #0a78c6;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 16px rgba(9, 47, 70, 0.08);
+}
+
+.contact-grid a[href^="tel"]::before {
+  content: "📞";
+}
+
+.contact-grid a[href*="instagram"]::before {
+  content: "📸";
+}
+
+.contact-grid span::before {
+  content: "📍";
+}
+
+.contact-grid a[href^="mailto"]::before {
+  content: "✉️";
 }
 
 .chat-widget {
