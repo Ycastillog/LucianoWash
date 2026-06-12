@@ -419,6 +419,11 @@ h3 {
   box-shadow: 0 12px 28px rgba(9, 47, 70, 0.08);
 }
 
+.about-grid article:first-child {
+  border-color: rgba(34, 215, 255, 0.55);
+  background: linear-gradient(180deg, #ffffff 0%, #e8f8ff 100%);
+}
+
 .about-grid strong {
   display: block;
   margin-bottom: 10px;
