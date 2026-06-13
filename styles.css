@@ -405,6 +405,41 @@ h3 {
   font-size: 1.08rem;
 }
 
+.history-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 0 18px;
+  border: 1px solid #9be8ff;
+  background: #9be8ff;
+  box-shadow: 0 18px 42px rgba(9, 47, 70, 0.1);
+}
+
+.history-strip article {
+  min-height: 128px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 5px;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 30% 10%, rgba(22, 191, 243, 0.16), transparent 34%),
+    #ffffff;
+  text-align: center;
+}
+
+.history-strip strong {
+  color: #063553;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 0.95;
+  font-weight: 1000;
+}
+
+.history-strip span {
+  color: #0f4362;
+  font-weight: 900;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1271,6 +1306,7 @@ button {
   .booking,
   .contact-band,
   .comparison-grid,
+  .history-strip,
   .package-grid,
   .process-steps,
   .social-grid {
@@ -1375,6 +1411,7 @@ button {
   .quick-panel,
   .contact-grid,
   .detail-list,
+  .history-strip,
   .package-grid,
   .proof-strip,
   .process-steps,
