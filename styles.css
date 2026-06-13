@@ -191,6 +191,18 @@ img {
   max-height: min(34vh, 340px);
 }
 
+.brand-kicker {
+  width: fit-content;
+  margin: -10px 0 18px;
+  padding: 7px 12px;
+  background: rgba(6, 21, 32, 0.62);
+  border: 1px solid rgba(34, 215, 255, 0.32);
+  color: #d8f4ff;
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--green);
@@ -322,7 +334,7 @@ h3 {
 
 .proof-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   padding: 0 clamp(18px, 5vw, 64px);
   background: #061520;
@@ -352,7 +364,7 @@ h3 {
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
