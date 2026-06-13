@@ -583,14 +583,14 @@ h3 {
 }
 
 .service-media {
-  height: 210px;
+  height: 168px;
   margin: 0 -22px 0;
   background: #dbeef7;
   overflow: hidden;
 }
 
 .service-card.spotlight .service-media {
-  height: 250px;
+  height: 200px;
 }
 
 .service-media img {
@@ -1453,12 +1453,12 @@ button {
   }
 
   .service-media {
-    height: 188px;
+    height: 150px;
     margin: 0 -16px 0;
   }
 
   .service-card.spotlight .service-media {
-    height: 210px;
+    height: 168px;
   }
 
   .icon-media svg {
