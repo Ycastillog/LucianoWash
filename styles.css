@@ -1230,7 +1230,7 @@ button {
 
 .footer {
   display: grid;
-  grid-template-columns: 1.35fr 1fr auto;
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 16px;
   padding: 30px clamp(18px, 5vw, 64px);
@@ -1251,23 +1251,6 @@ button {
 }
 
 .manager-credit {
-  margin-top: 6px;
-  color: #d8f4ff;
-  font-weight: 800;
-}
-
-.footer-social {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.footer-social a {
-  color: #ffffff;
-  font-weight: 800;
-}
-
-.footer-email {
   margin-top: 6px;
   color: #d8f4ff;
   font-weight: 800;
