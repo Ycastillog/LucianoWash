@@ -191,18 +191,6 @@ img {
   max-height: min(28vh, 270px);
 }
 
-.brand-kicker {
-  width: fit-content;
-  margin: -10px 0 18px;
-  padding: 7px 12px;
-  background: rgba(6, 21, 32, 0.62);
-  border: 1px solid rgba(34, 215, 255, 0.32);
-  color: #d8f4ff;
-  font-size: 0.74rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
 .eyebrow {
   margin: 0 0 12px;
   color: var(--green);
@@ -429,11 +417,6 @@ h3 {
   border: 1px solid #cfe4ee;
   background: #ffffff;
   box-shadow: 0 12px 28px rgba(9, 47, 70, 0.08);
-}
-
-.about-grid article:first-child {
-  border-color: rgba(34, 215, 255, 0.55);
-  background: linear-gradient(180deg, #ffffff 0%, #e8f8ff 100%);
 }
 
 .about-grid strong {
@@ -1247,7 +1230,7 @@ button {
 
 .footer {
   display: grid;
-  grid-template-columns: 1.15fr 1.2fr 1fr auto;
+  grid-template-columns: 1.35fr 1fr auto;
   align-items: center;
   gap: 16px;
   padding: 30px clamp(18px, 5vw, 64px);
@@ -1281,6 +1264,12 @@ button {
 
 .footer-social a {
   color: #ffffff;
+  font-weight: 800;
+}
+
+.footer-email {
+  margin-top: 6px;
+  color: #d8f4ff;
   font-weight: 800;
 }
 
