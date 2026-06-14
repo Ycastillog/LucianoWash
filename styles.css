@@ -48,6 +48,8 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  width: 100%;
+  max-width: 100vw;
   min-height: 78px;
   padding: 10px clamp(18px, 5vw, 56px);
   background: rgba(3, 20, 33, 0.94);
@@ -105,7 +107,7 @@ img {
 }
 
 .lang-option {
-  min-width: 38px;
+  min-width: 42px;
   min-height: 34px;
   border: 0;
   background: transparent;
@@ -113,11 +115,80 @@ img {
   font: inherit;
   font-size: 0.78rem;
   font-weight: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
 }
 
 .lang-option.is-active {
   background: var(--blue);
   color: #031421;
+}
+
+.lang-code {
+  line-height: 1;
+}
+
+.us-flag {
+  position: relative;
+  width: 24px;
+  height: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 0 0 1px rgba(4, 20, 33, 0.26);
+  background:
+    linear-gradient(
+      to bottom,
+      #b22234 0 7.69%,
+      #ffffff 7.69% 15.38%,
+      #b22234 15.38% 23.07%,
+      #ffffff 23.07% 30.76%,
+      #b22234 30.76% 38.45%,
+      #ffffff 38.45% 46.14%,
+      #b22234 46.14% 53.83%,
+      #ffffff 53.83% 61.52%,
+      #b22234 61.52% 69.21%,
+      #ffffff 69.21% 76.9%,
+      #b22234 76.9% 84.59%,
+      #ffffff 84.59% 92.28%,
+      #b22234 92.28% 100%
+    );
+}
+
+.us-flag::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 10.5px;
+  height: 8.9px;
+  background: #3c3b6e;
+}
+
+.us-flag span {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 1.3px;
+  height: 1.3px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    3px 0 #ffffff,
+    6px 0 #ffffff,
+    0 2.5px #ffffff,
+    3px 2.5px #ffffff,
+    6px 2.5px #ffffff,
+    0 5px #ffffff,
+    3px 5px #ffffff,
+    6px 5px #ffffff;
+  z-index: 1;
+}
+
+.lang-option.is-active .us-flag {
+  border-color: rgba(3, 20, 33, 0.42);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 .nav a:hover,
@@ -1328,13 +1399,38 @@ button {
     min-width: 0;
   }
 
+  .brand strong {
+    font-size: 0.95rem;
+  }
+
   .brand small,
+  .brand span,
   .nav-action {
     display: none;
   }
 
   .header-actions {
     margin-left: auto;
+    margin-right: 58px;
+  }
+
+  .language-toggle {
+    padding: 2px;
+  }
+
+  .lang-option {
+    min-width: 38px;
+    min-height: 34px;
+    padding: 0 7px;
+  }
+
+  .lang-option[data-lang="en"] .lang-code {
+    display: none;
+  }
+
+  .us-flag {
+    width: 25px;
+    height: 17px;
   }
 
   .brand-logo {

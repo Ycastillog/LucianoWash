@@ -8,7 +8,7 @@
     <title>Luciano Wash - Limpieza profesional</title>
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/luciano-wash-logo-official-no-tagline.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=61">
+    <link rel="stylesheet" href="styles.css?v=62">
   </head>
   <body>
     <header class="topbar">
@@ -28,8 +28,13 @@
       </nav>
       <div class="header-actions">
         <div class="language-toggle" aria-label="Selector de idioma">
-          <button type="button" class="lang-option is-active" data-lang="es">ES</button>
-          <button type="button" class="lang-option" data-lang="en">EN</button>
+          <button type="button" class="lang-option is-active" data-lang="es" aria-label="Español">
+            <span class="lang-code">ES</span>
+          </button>
+          <button type="button" class="lang-option" data-lang="en" aria-label="English">
+            <span class="us-flag" aria-hidden="true"><span></span></span>
+            <span class="lang-code">EN</span>
+          </button>
         </div>
         <a class="nav-action" href="#cita" data-i18n="nav_reserve">Cotizar</a>
       </div>
@@ -352,6 +357,6 @@
     </footer>
 
     <script async src="https://www.tiktok.com/embed.js"></script>
-    <script src="app.js?v=61"></script>
+    <script src="app.js?v=62"></script>
   </body>
 </html>
