@@ -1,4 +1,4 @@
-const CACHE_NAME = "luciano-wash-v63";
+const CACHE_NAME = "luciano-wash-v64";
 const ASSETS = [
   "./",
   "./index.html",
@@ -25,6 +25,7 @@ const ASSETS = [
   "./assets/service-muebles-alfombras.png",
   "./assets/service-hogares-negocios.png",
   "./assets/service-piscinas-pressure.png",
+  "./assets/service-estimacion-rapida.png",
 ];
 
 self.addEventListener("install", (event) => {
