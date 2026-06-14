@@ -506,12 +506,8 @@ h3 {
 }
 
 .service-card.featured {
-  background: #e8f8ff;
-  border-color: rgba(0, 200, 255, 0.62);
-}
-
-.service-card.icon-card {
-  background: linear-gradient(180deg, #ffffff 0%, #eef8fc 100%);
+  background: #ffffff;
+  border-color: #cfe4ee;
 }
 
 .service-card.compact-cta {
