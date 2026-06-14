@@ -491,8 +491,8 @@ h3 {
   display: flex;
   flex-direction: column;
   grid-column: span 3;
-  min-height: 330px;
-  padding: 0 22px 20px;
+  min-height: 300px;
+  padding: 0 20px 18px;
   border: 1px solid #cfe4ee;
   background: #ffffff;
   color: #092130;
@@ -542,7 +542,7 @@ h3 {
 }
 
 .service-card h3 {
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .service-tag {
@@ -550,7 +550,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
-  margin: 16px 0 8px;
+  margin: 14px 0 7px;
   padding: 0 10px;
   background: rgba(22, 191, 243, 0.12);
   color: #0a78c6;
@@ -560,7 +560,7 @@ h3 {
 }
 
 .card-cta {
-  min-height: 42px;
+  min-height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -573,8 +573,8 @@ h3 {
 
 .service-media {
   position: relative;
-  height: 168px;
-  margin: 0 -22px 0;
+  height: 145px;
+  margin: 0 -20px 0;
   background: #dbeef7;
   overflow: hidden;
 }
@@ -1420,7 +1420,7 @@ button {
 
   .service-card {
     min-height: auto;
-    padding: 0 16px 16px;
+    padding: 0 15px 15px;
   }
 
   .service-card.spotlight {
@@ -1428,12 +1428,12 @@ button {
   }
 
   .service-media {
-    height: 150px;
-    margin: 0 -16px 0;
+    height: 132px;
+    margin: 0 -15px 0;
   }
 
   .service-card.spotlight .service-media {
-    height: 168px;
+    height: 148px;
   }
 
   .service-card h3 {

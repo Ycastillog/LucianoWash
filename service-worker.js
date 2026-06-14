@@ -1,4 +1,4 @@
-const CACHE_NAME = "luciano-wash-v66";
+const CACHE_NAME = "luciano-wash-v67";
 const ASSETS = [
   "./",
   "./index.html",
@@ -22,8 +22,10 @@ const ASSETS = [
   "./assets/before-after-upholstery.png",
   "./assets/before-after-home-carpet.png",
   "./assets/service-autos-camiones.png",
+  "./assets/service-autos-camiones-clean.png",
   "./assets/service-muebles-alfombras.png",
   "./assets/service-hogares-negocios.png",
+  "./assets/service-hogares-negocios-clean.png",
   "./assets/service-piscinas-pressure.png",
   "./assets/service-estimacion-rapida.png",
 ];
