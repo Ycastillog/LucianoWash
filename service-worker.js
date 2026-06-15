@@ -1,4 +1,4 @@
-const CACHE_NAME = "luciano-wash-v70";
+const CACHE_NAME = "luciano-wash-v72";
 const ASSETS = [
   "./",
   "./index.html",
@@ -17,17 +17,17 @@ const ASSETS = [
   "./assets/brand-mobile-dark.svg",
   "./assets/service-icons.svg",
   "./assets/hero-cleaning-solutions.png",
-  "./assets/hero-real-results.png",
-  "./assets/before-after-car.png",
-  "./assets/before-after-upholstery.png",
-  "./assets/before-after-home-carpet.png",
+  "./assets/hero-real-results.webp",
+  "./assets/before-after-car.webp",
+  "./assets/before-after-upholstery.webp",
+  "./assets/before-after-home-carpet.webp",
   "./assets/service-autos-camiones.png",
-  "./assets/service-autos-camiones-clean.png",
-  "./assets/service-muebles-alfombras.png",
+  "./assets/service-autos-camiones-clean.webp",
+  "./assets/service-muebles-alfombras.webp",
   "./assets/service-hogares-negocios.png",
-  "./assets/service-hogares-negocios-clean.png",
-  "./assets/service-piscinas-pressure.png",
-  "./assets/service-estimacion-rapida.png",
+  "./assets/service-hogares-negocios-clean.webp",
+  "./assets/service-piscinas-pressure.webp",
+  "./assets/service-estimacion-rapida.webp",
 ];
 
 self.addEventListener("install", (event) => {
