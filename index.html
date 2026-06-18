@@ -243,14 +243,18 @@
         <div class="booking-copy">
           <p class="eyebrow" data-i18n="booking_eyebrow">Agenda</p>
           <h2 data-i18n="booking_title">Solicita tu servicio</h2>
-          <p data-i18n="booking_copy">Completa los datos y se abre WhatsApp con el mensaje listo para reservar o cotizar.</p>
+          <p data-i18n="booking_copy">Completa los datos, envía tu foto o video al correo de Luciano Wash y continúa por WhatsApp.</p>
           <ul>
-            <li data-i18n="booking_li_1">Confirmación directa por WhatsApp.</li>
+            <li data-i18n="booking_li_1">La solicitud llega al correo corporativo.</li>
             <li data-i18n="booking_li_2">Servicios para autos, hogares, negocios y exteriores.</li>
-            <li data-i18n="booking_li_3">Lista para agregar agenda y panel administrativo después.</li>
+            <li data-i18n="booking_li_3">Seguimiento rápido por WhatsApp.</li>
           </ul>
         </div>
-        <form class="booking-form" id="bookingForm">
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/ajax/lucianowash@lps-company.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Nueva cotización desde Luciano Wash">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="Correo destino" value="lucianowash@lps-company.com">
           <label>
             <span data-i18n="form_name">Nombre</span>
             <input name="name" autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required>
@@ -293,9 +297,9 @@
           </label>
           <label class="file-field">
             <span data-i18n="form_photo">Foto o video para estimación</span>
-            <input name="photo" type="file" accept="image/*,video/*">
+            <input name="attachment" type="file" accept="image/*,video/*">
           </label>
-          <p class="form-help" data-i18n="form_photo_help">Selecciona una foto o video. Al abrir WhatsApp, adjunta el archivo manualmente para recibir una cotización más precisa.</p>
+          <p class="form-help" data-i18n="form_photo_help">Selecciona una foto o video. La información se envía a lucianowash@lps-company.com y luego se abre WhatsApp para dar seguimiento.</p>
           <button class="button primary full" type="submit" data-i18n="form_submit">Cotizar</button>
           <p class="form-note" id="formNote" role="status"></p>
         </form>

@@ -1,4 +1,5 @@
 const WHATSAPP_NUMBER = "19296429620";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/lucianowash@lps-company.com";
 
 const bookingForm = document.querySelector("#bookingForm");
 const formNote = document.querySelector("#formNote");
@@ -166,10 +167,10 @@ const translations = {
     instagram_fallback_copy: "Abre el perfil para ver fotos, videos y resultados reales de Luciano Wash.",
     booking_eyebrow: "Agenda",
     booking_title: "Solicita tu servicio",
-    booking_copy: "Completa los datos y se abre WhatsApp con el mensaje listo para reservar o cotizar.",
-    booking_li_1: "Confirmación directa por WhatsApp.",
+    booking_copy: "Completa los datos, envía tu foto o video al correo de Luciano Wash y continúa por WhatsApp.",
+    booking_li_1: "La solicitud llega al correo corporativo.",
     booking_li_2: "Servicios para autos, hogares, negocios y exteriores.",
-    booking_li_3: "Lista para agregar agenda y panel administrativo después.",
+    booking_li_3: "Seguimiento rápido por WhatsApp.",
     form_name: "Nombre",
     form_name_placeholder: "Tu nombre",
     form_item: "Qué necesitas limpiar",
@@ -181,7 +182,7 @@ const translations = {
     form_location_placeholder: "Sector o dirección",
     service_area: "New York y zonas cercanas",
     form_photo: "Foto o video para estimación",
-    form_photo_help: "Selecciona una foto o video. Al abrir WhatsApp, adjunta el archivo manualmente para recibir una cotización más precisa.",
+    form_photo_help: "Selecciona una foto o video. La información se envía a lucianowash@lps-company.com y luego se abre WhatsApp para dar seguimiento.",
     form_submit: "Cotizar",
     contact_eyebrow: "Contáctanos",
     contact_title: "Hablemos de tu servicio",
@@ -225,7 +226,9 @@ const translations = {
     option_16: "Limpieza de ventanas",
     option_17: "Mantenimiento programado",
     option_18: "Lavado a presión / Pressure Washing",
-    formNote: "Mensaje listo. Cuando abra WhatsApp, adjunta la foto o video seleccionado.",
+    formSending: "Enviando solicitud al correo de Luciano Wash...",
+    formNote: "Solicitud enviada al correo. Ahora se abrirá WhatsApp para dar seguimiento.",
+    formError: "No se pudo enviar el correo automáticamente. Se abrirá WhatsApp con la información.",
     waIntro: "Hola Luciano Wash, quiero cotizar un servicio de limpieza.",
     msgName: "Nombre",
     msgNeed: "Necesidad",
@@ -233,7 +236,7 @@ const translations = {
     msgDate: "Fecha deseada",
     msgLocation: "Ubicación",
     msgPhoto: "Foto o video para estimación",
-    msgPhotoReady: "Ya seleccioné una foto o video y lo adjuntaré manualmente en este chat.",
+    msgPhotoReady: "Ya seleccioné una foto o video y lo envié con el formulario al correo.",
     msgPending: "Por confirmar",
   },
   en: {
@@ -389,10 +392,10 @@ const translations = {
     instagram_fallback_copy: "Open the profile to see photos, videos and real Luciano Wash results.",
     booking_eyebrow: "Booking",
     booking_title: "Request your service",
-    booking_copy: "Complete the details and WhatsApp opens with the message ready to book or quote.",
-    booking_li_1: "Direct confirmation by WhatsApp.",
+    booking_copy: "Complete the details, send your photo or video to Luciano Wash email and continue by WhatsApp.",
+    booking_li_1: "The request goes to the corporate email.",
     booking_li_2: "Services for cars, homes, businesses and outdoor spaces.",
-    booking_li_3: "Ready to add scheduling and an admin panel later.",
+    booking_li_3: "Fast follow-up by WhatsApp.",
     form_name: "Name",
     form_name_placeholder: "Your name",
     form_item: "What needs cleaning",
@@ -404,7 +407,7 @@ const translations = {
     form_location_placeholder: "Area or address",
     service_area: "New York and nearby areas",
     form_photo: "Photo or video for estimate",
-    form_photo_help: "Select a photo or video. When WhatsApp opens, attach the file manually to receive a more accurate quote.",
+    form_photo_help: "Select a photo or video. The information is sent to lucianowash@lps-company.com and WhatsApp opens for follow-up.",
     form_submit: "Quote",
     contact_eyebrow: "Contact us",
     contact_title: "Let’s talk about your service",
@@ -448,7 +451,9 @@ const translations = {
     option_16: "Window cleaning",
     option_17: "Scheduled maintenance",
     option_18: "Pressure Washing",
-    formNote: "Message ready. When WhatsApp opens, attach the selected photo or video.",
+    formSending: "Sending request to Luciano Wash email...",
+    formNote: "Request sent to email. WhatsApp will open for follow-up.",
+    formError: "The email could not be sent automatically. WhatsApp will open with the information.",
     waIntro: "Hello Luciano Wash, I want to quote a cleaning service.",
     msgName: "Name",
     msgNeed: "Need",
@@ -456,7 +461,7 @@ const translations = {
     msgDate: "Preferred date",
     msgLocation: "Location",
     msgPhoto: "Estimate photo or video",
-    msgPhotoReady: "I selected a photo or video and will attach it manually in this chat.",
+    msgPhotoReady: "I selected a photo or video and sent it with the form to the email.",
     msgPending: "To confirm",
   },
 };
@@ -501,12 +506,13 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-bookingForm.addEventListener("submit", (event) => {
+bookingForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = new FormData(bookingForm);
-  const photo = data.get("photo");
+  const attachment = data.get("attachment");
   const lang = localStorage.getItem("lucianoWashLang") || "es";
   const dictionary = translations[lang] || translations.es;
+  const submitButton = bookingForm.querySelector('button[type="submit"]');
   const message = [
     dictionary.waIntro,
     `${dictionary.msgName}: ${data.get("name")}`,
@@ -514,11 +520,57 @@ bookingForm.addEventListener("submit", (event) => {
     `${dictionary.msgService}: ${data.get("service")}`,
     `${dictionary.msgDate}: ${data.get("date")}`,
     `${dictionary.msgLocation}: ${data.get("location") || dictionary.msgPending}`,
-    `${dictionary.msgPhoto}: ${photo && photo.name ? dictionary.msgPhotoReady : dictionary.msgPending}`,
+    `${dictionary.msgPhoto}: ${attachment && attachment.name ? dictionary.msgPhotoReady : dictionary.msgPending}`,
   ].join("\n");
 
-  formNote.textContent = dictionary.formNote;
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  const openWhatsApp = () => {
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
+  const emailData = new FormData();
+  emailData.append("_subject", "Nueva cotización desde Luciano Wash");
+  emailData.append("_template", "table");
+  emailData.append("_captcha", "false");
+  emailData.append("Correo destino", "lucianowash@lps-company.com");
+  emailData.append(dictionary.msgName, data.get("name") || "");
+  emailData.append(dictionary.msgNeed, data.get("item") || "");
+  emailData.append(dictionary.msgService, data.get("service") || "");
+  emailData.append(dictionary.msgDate, data.get("date") || "");
+  emailData.append(dictionary.msgLocation, data.get("location") || dictionary.msgPending);
+  emailData.append(dictionary.msgPhoto, attachment && attachment.name ? attachment.name : dictionary.msgPending);
+  emailData.append("Resumen WhatsApp", message);
+
+  if (attachment && attachment.name) {
+    emailData.append("attachment", attachment, attachment.name);
+  }
+
+  formNote.textContent = dictionary.formSending;
+  if (submitButton) {
+    submitButton.disabled = true;
+  }
+
+  try {
+    const response = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      body: emailData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Email request failed");
+    }
+
+    formNote.textContent = dictionary.formNote;
+  } catch (error) {
+    formNote.textContent = dictionary.formError;
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+    }
+    openWhatsApp();
+  }
 });
 
 langButtons.forEach((button) => {
