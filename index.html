@@ -250,22 +250,25 @@
             <li data-i18n="booking_li_3">Seguimiento rápido por WhatsApp.</li>
           </ul>
         </div>
-        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/ajax/lucianowash@lps-company.com" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="_subject" value="Nueva cotización desde Luciano Wash">
+        <iframe class="email-frame" name="quoteEmailFrame" title="Envío de cotización"></iframe>
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/lucianowash@lps-company.com" method="POST" enctype="multipart/form-data" target="quoteEmailFrame">
+          <input type="hidden" name="_subject" id="emailSubject" value="[Luciano Wash] Nueva cotización">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="Correo destino" value="lucianowash@lps-company.com">
+          <input type="hidden" name="Empresa" value="Luciano Wash">
+          <input type="hidden" name="Origen" value="Formulario web Luciano Wash">
+          <input type="hidden" name="Resumen" id="emailSummary" value="">
           <label>
             <span data-i18n="form_name">Nombre</span>
-            <input name="name" autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required>
+            <input name="Cliente" autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="form_name_placeholder" required>
           </label>
           <label>
             <span data-i18n="form_item">Qué necesitas limpiar</span>
-            <input name="item" placeholder="Ej. SUV, sofá, oficina, piscina" data-i18n-placeholder="form_item_placeholder" required>
+            <input name="Necesidad" placeholder="Ej. SUV, sofá, oficina, piscina" data-i18n-placeholder="form_item_placeholder" required>
           </label>
           <label>
             <span data-i18n="form_service">Servicio</span>
-            <select name="service" required>
+            <select name="Servicio" required>
               <option value="" data-i18n="form_select">Selecciona</option>
               <option data-i18n="option_1">Detailing de autos</option>
               <option data-i18n="option_2">Limpieza de motor</option>
@@ -289,11 +292,11 @@
           </label>
           <label>
             <span data-i18n="form_date">Fecha deseada</span>
-            <input name="date" type="date" required>
+            <input name="Fecha" type="date" required>
           </label>
           <label>
             <span data-i18n="form_location">Ubicación</span>
-            <input name="location" placeholder="Sector o dirección" data-i18n-placeholder="form_location_placeholder">
+            <input name="Ubicacion" placeholder="Sector o dirección" data-i18n-placeholder="form_location_placeholder">
           </label>
           <label class="file-field">
             <span data-i18n="form_photo">Foto o video para estimación</span>
@@ -329,7 +332,7 @@
           <button class="chat-close" type="button" aria-label="Cerrar chat">×</button>
         </div>
         <div class="chat-body">
-          <p class="chat-bubble" data-i18n="chat_intro">Hola, soy Luciano Wash. Envíanos una foto y te damos una estimación rápida.</p>
+          <p class="chat-bubble" data-i18n="chat_intro">Hola, somos Luciano Wash. Envíanos una foto y te damos una estimación rápida.</p>
           <div class="chat-options" aria-label="Opciones rápidas">
             <button type="button" data-chat-key="chat_option_auto" data-chat-message="Quiero cotizar detailing de auto" data-i18n="chat_option_auto">Auto</button>
             <button type="button" data-chat-key="chat_option_sofa" data-chat-message="Quiero cotizar limpieza de sofá" data-i18n="chat_option_sofa">Sofá</button>
@@ -341,7 +344,7 @@
             <span data-i18n="chat_label">Mensaje</span>
             <textarea id="chatMessage" rows="3" data-i18n-placeholder="chat_placeholder" placeholder="Ej. Tengo un sofá de 3 plazas y puedo enviar foto."></textarea>
           </label>
-        <a class="chat-send" id="chatSend" href="https://wa.me/19296429620?text=Hola%20Luciano%20Wash%2C%20quiero%20cotizar%20un%20servicio." target="_blank" rel="noopener noreferrer" data-i18n="chat_send">Cotizar</a>
+        <a class="chat-send" id="chatSend" href="https://wa.me/19296429620?text=Hola%2C%20somos%20Luciano%20Wash.%20Env%C3%ADanos%20una%20foto%20y%20te%20damos%20una%20estimaci%C3%B3n%20r%C3%A1pida." target="_blank" rel="noopener noreferrer" data-i18n="chat_send">Cotizar</a>
         </div>
       </div>
       <button class="chat-launcher" type="button" aria-controls="chatPanel" aria-expanded="false">

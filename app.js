@@ -1,8 +1,9 @@
 const WHATSAPP_NUMBER = "19296429620";
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/lucianowash@lps-company.com";
 
 const bookingForm = document.querySelector("#bookingForm");
 const formNote = document.querySelector("#formNote");
+const emailSubject = document.querySelector("#emailSubject");
+const emailSummary = document.querySelector("#emailSummary");
 const langButtons = document.querySelectorAll("[data-lang]");
 const chatWidget = document.querySelector(".chat-widget");
 const chatLauncher = document.querySelector(".chat-launcher");
@@ -189,7 +190,7 @@ const translations = {
     float_quote: "Cotizar",
     float_quote_mobile: "Cotizar",
     chat_status: "Respuesta por WhatsApp",
-    chat_intro: "Hola, soy Luciano Wash. Envíanos una foto y te damos una estimación rápida.",
+    chat_intro: "Hola, somos Luciano Wash. Envíanos una foto y te damos una estimación rápida.",
     chat_label: "Mensaje",
     chat_placeholder: "Ej. Tengo un sofá de 3 plazas y puedo enviar foto.",
     chat_send: "Cotizar",
@@ -199,7 +200,7 @@ const translations = {
     chat_option_pool: "Piscina",
     chat_option_home: "Casa / negocio",
     chat_option_pressure: "Pressure Washing",
-    chat_default_message: "Hola Luciano Wash, quiero cotizar un servicio. Puedo enviar una foto para estimación.",
+    chat_default_message: "Hola, somos Luciano Wash. Envíanos una foto y te damos una estimación rápida.",
     chat_msg_auto: "Quiero cotizar detailing de auto. Puedo enviar foto.",
     chat_msg_sofa: "Quiero cotizar limpieza de sofá. Puedo enviar foto.",
     chat_msg_carpet: "Quiero cotizar limpieza de alfombra. Puedo enviar foto.",
@@ -414,7 +415,7 @@ const translations = {
     float_quote: "Quote",
     float_quote_mobile: "Quote",
     chat_status: "Reply by WhatsApp",
-    chat_intro: "Hi, this is Luciano Wash. Send us a photo and we will give you a quick estimate.",
+    chat_intro: "Hi, we are Luciano Wash. Send us a photo and we will give you a quick estimate.",
     chat_label: "Message",
     chat_placeholder: "Ex. I have a 3-seat sofa and can send a photo.",
     chat_send: "Quote",
@@ -506,20 +507,25 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-bookingForm.addEventListener("submit", async (event) => {
+bookingForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(bookingForm);
   const attachment = data.get("attachment");
   const lang = localStorage.getItem("lucianoWashLang") || "es";
   const dictionary = translations[lang] || translations.es;
   const submitButton = bookingForm.querySelector('button[type="submit"]');
+  const clientName = data.get("Cliente") || "";
+  const need = data.get("Necesidad") || "";
+  const service = data.get("Servicio") || "";
+  const date = data.get("Fecha") || "";
+  const location = data.get("Ubicacion") || dictionary.msgPending;
   const message = [
     dictionary.waIntro,
-    `${dictionary.msgName}: ${data.get("name")}`,
-    `${dictionary.msgNeed}: ${data.get("item")}`,
-    `${dictionary.msgService}: ${data.get("service")}`,
-    `${dictionary.msgDate}: ${data.get("date")}`,
-    `${dictionary.msgLocation}: ${data.get("location") || dictionary.msgPending}`,
+    `${dictionary.msgName}: ${clientName}`,
+    `${dictionary.msgNeed}: ${need}`,
+    `${dictionary.msgService}: ${service}`,
+    `${dictionary.msgDate}: ${date}`,
+    `${dictionary.msgLocation}: ${location}`,
     `${dictionary.msgPhoto}: ${attachment && attachment.name ? dictionary.msgPhotoReady : dictionary.msgPending}`,
   ].join("\n");
 
@@ -527,21 +533,12 @@ bookingForm.addEventListener("submit", async (event) => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
-  const emailData = new FormData();
-  emailData.append("_subject", "Nueva cotización desde Luciano Wash");
-  emailData.append("_template", "table");
-  emailData.append("_captcha", "false");
-  emailData.append("Correo destino", "lucianowash@lps-company.com");
-  emailData.append(dictionary.msgName, data.get("name") || "");
-  emailData.append(dictionary.msgNeed, data.get("item") || "");
-  emailData.append(dictionary.msgService, data.get("service") || "");
-  emailData.append(dictionary.msgDate, data.get("date") || "");
-  emailData.append(dictionary.msgLocation, data.get("location") || dictionary.msgPending);
-  emailData.append(dictionary.msgPhoto, attachment && attachment.name ? attachment.name : dictionary.msgPending);
-  emailData.append("Resumen WhatsApp", message);
+  if (emailSubject) {
+    emailSubject.value = `[Luciano Wash] Cotización - ${service || "Servicio"} - ${clientName || "Cliente web"}`;
+  }
 
-  if (attachment && attachment.name) {
-    emailData.append("attachment", attachment, attachment.name);
+  if (emailSummary) {
+    emailSummary.value = message;
   }
 
   formNote.textContent = dictionary.formSending;
@@ -549,28 +546,14 @@ bookingForm.addEventListener("submit", async (event) => {
     submitButton.disabled = true;
   }
 
-  try {
-    const response = await fetch(FORM_ENDPOINT, {
-      method: "POST",
-      body: emailData,
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error("Email request failed");
-    }
-
-    formNote.textContent = dictionary.formNote;
-  } catch (error) {
-    formNote.textContent = dictionary.formError;
-  } finally {
+  HTMLFormElement.prototype.submit.call(bookingForm);
+  formNote.textContent = dictionary.formNote;
+  window.setTimeout(() => {
     if (submitButton) {
       submitButton.disabled = false;
     }
     openWhatsApp();
-  }
+  }, 500);
 });
 
 langButtons.forEach((button) => {

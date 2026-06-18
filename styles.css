@@ -1041,6 +1041,10 @@ h3 {
   background: #0d2b40;
 }
 
+.email-frame {
+  display: none;
+}
+
 label {
   display: grid;
   gap: 8px;
