@@ -1,4 +1,4 @@
-const CACHE_NAME = "luciano-wash-v74";
+const CACHE_NAME = "luciano-wash-v75";
 const ASSETS = [
   "./",
   "./index.html",
@@ -32,6 +32,7 @@ const ASSETS = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
+  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
@@ -40,6 +41,7 @@ self.addEventListener("activate", (event) => {
       Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
     )
   );
+  self.clients.claim();
 });
 
 self.addEventListener("fetch", (event) => {
@@ -47,7 +49,25 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => cached || fetch(event.request))
-  );
+  const requestUrl = new URL(event.request.url);
+  const shouldUseNetworkFirst =
+    event.request.mode === "navigate" ||
+    requestUrl.pathname.endsWith(".html") ||
+    requestUrl.pathname.endsWith(".js") ||
+    requestUrl.pathname.endsWith(".css");
+
+  if (shouldUseNetworkFirst) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request)));
 });

@@ -541,19 +541,19 @@ bookingForm.addEventListener("submit", (event) => {
     emailSummary.value = message;
   }
 
+  openWhatsApp();
   formNote.textContent = dictionary.formSending;
   if (submitButton) {
     submitButton.disabled = true;
   }
 
-  HTMLFormElement.prototype.submit.call(bookingForm);
-  formNote.textContent = dictionary.formNote;
   window.setTimeout(() => {
+    HTMLFormElement.prototype.submit.call(bookingForm);
+    formNote.textContent = dictionary.formNote;
     if (submitButton) {
       submitButton.disabled = false;
     }
-    openWhatsApp();
-  }, 500);
+  }, 150);
 });
 
 langButtons.forEach((button) => {
