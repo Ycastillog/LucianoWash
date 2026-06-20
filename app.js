@@ -1,5 +1,23 @@
 const WHATSAPP_NUMBER = "19296429620";
 
+function trackAnalyticsEvent(eventName, params = {}) {
+  if (typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", eventName, {
+    site_name: "Luciano Wash",
+    brand_name: "Luciano Wash",
+    host_name: window.location.hostname,
+    page_location: window.location.href,
+    ...params,
+  });
+}
+
+trackAnalyticsEvent("site_visit", {
+  page_group: "Principal",
+});
+
 const bookingForm = document.querySelector("#bookingForm");
 const formNote = document.querySelector("#formNote");
 const emailSubject = document.querySelector("#emailSubject");
@@ -13,6 +31,37 @@ const chatMessage = document.querySelector("#chatMessage");
 const chatSend = document.querySelector("#chatSend");
 const chatOptionButtons = document.querySelectorAll("[data-chat-message]");
 const hero = document.querySelector(".hero");
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const href = link.getAttribute("href") || "";
+
+    trackAnalyticsEvent("link_click", {
+      link_text: link.textContent.trim().replace(/\s+/g, " ").slice(0, 80),
+      link_url: href,
+      destination_type: href.includes("wa.me")
+        ? "whatsapp"
+        : href.includes("instagram")
+          ? "instagram"
+          : href.includes("tiktok")
+            ? "tiktok"
+            : href.startsWith("mailto:")
+              ? "email"
+              : href.startsWith("#")
+                ? "section"
+                : "external",
+    });
+  });
+});
+
+document.querySelectorAll("form").forEach((form) => {
+  form.addEventListener("submit", () => {
+    trackAnalyticsEvent("form_submit", {
+      form_id: form.id || "luciano_wash_form",
+      form_name: "Cotizacion Luciano Wash",
+    });
+  });
+});
 
 const translations = {
   es: {
