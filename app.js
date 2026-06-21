@@ -14,6 +14,16 @@ function trackAnalyticsEvent(eventName, params = {}) {
   });
 }
 
+function trackAdsLeadConversion(conversionSource) {
+  if (typeof window.gtag !== "function") {
+    return;
+  }
+
+  window.gtag("event", "ads_conversion_Inicio_de_la_tramitaci__1", {
+    conversion_source: conversionSource,
+  });
+}
+
 trackAnalyticsEvent("site_visit", {
   page_group: "Principal",
 });
@@ -35,11 +45,12 @@ const hero = document.querySelector(".hero");
 document.querySelectorAll("a[href]").forEach((link) => {
   link.addEventListener("click", () => {
     const href = link.getAttribute("href") || "";
+    const isWhatsAppLink = href.includes("wa.me");
 
     trackAnalyticsEvent("link_click", {
       link_text: link.textContent.trim().replace(/\s+/g, " ").slice(0, 80),
       link_url: href,
-      destination_type: href.includes("wa.me")
+      destination_type: isWhatsAppLink
         ? "whatsapp"
         : href.includes("instagram")
           ? "instagram"
@@ -49,8 +60,12 @@ document.querySelectorAll("a[href]").forEach((link) => {
               ? "email"
               : href.startsWith("#")
                 ? "section"
-                : "external",
+              : "external",
     });
+
+    if (isWhatsAppLink) {
+      trackAdsLeadConversion("whatsapp_click");
+    }
   });
 });
 
@@ -558,6 +573,7 @@ if ("serviceWorker" in navigator) {
 
 bookingForm.addEventListener("submit", (event) => {
   event.preventDefault();
+  trackAdsLeadConversion("quote_form_submit");
   const data = new FormData(bookingForm);
   const attachment = data.get("attachment");
   const lang = localStorage.getItem("lucianoWashLang") || "es";

@@ -1,4 +1,4 @@
-const CACHE_NAME = "luciano-wash-v76";
+const CACHE_NAME = "luciano-wash-v77";
 const ASSETS = [
   "./",
   "./index.html",
