@@ -1,4 +1,5 @@
 const WHATSAPP_NUMBER = "19296429620";
+const ADS_CONVERSION_SEND_TO = "AW-18232314102/Hk2uCLrcwcUcEPaR7PVD";
 
 function trackAnalyticsEvent(eventName, params = {}) {
   if (typeof window.gtag !== "function") {
@@ -19,7 +20,11 @@ function trackAdsLeadConversion(conversionSource) {
     return;
   }
 
-  window.gtag("event", "ads_conversion_Inicio_de_la_tramitaci__1", {
+  const transactionId = `${conversionSource}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+
+  window.gtag("event", "conversion", {
+    send_to: ADS_CONVERSION_SEND_TO,
+    transaction_id: transactionId,
     conversion_source: conversionSource,
   });
 }
